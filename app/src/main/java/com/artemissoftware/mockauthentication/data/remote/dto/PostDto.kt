@@ -2,7 +2,7 @@ package com.artemissoftware.mockauthentication.data.remote.dto
 
 import com.squareup.moshi.Json
 
-data class Post(
+data class PostDto(
     @field:Json(name = "userId")
     val userId: Int,
     @field:Json(name = "id")
