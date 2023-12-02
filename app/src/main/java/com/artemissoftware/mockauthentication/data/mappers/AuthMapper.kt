@@ -13,14 +13,14 @@ fun AuthLoginDto.toLogin(): Login {
     )
 }
 
-fun UserDto.toLogin(): User {
+fun UserDto.toUser(): User {
     return User(
         id = id,
         name = name,
         avatarUrl = avatar.thumbnail,
     )
 }
-fun PostDto.toLogin(): Post {
+fun PostDto.toPost(): Post {
     return Post(
         id = id,
         title = title,
