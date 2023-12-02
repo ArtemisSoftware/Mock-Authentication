@@ -8,8 +8,9 @@ import com.artemissoftware.mockauthentication.domain.models.Post
 import com.artemissoftware.mockauthentication.domain.models.Resource
 import com.artemissoftware.mockauthentication.domain.models.User
 import com.artemissoftware.mockauthentication.domain.repository.AuthRepository
+import javax.inject.Inject
 
-class AuthRepositoryImpl constructor(
+class AuthRepositoryImpl @Inject constructor(
     private val authApi: AuthApi,
 ) : AuthRepository {
     override suspend fun login(credentials: String?): Resource<Login> = try {
