@@ -16,6 +16,10 @@ retrofit = "2.9.0"
 hilt = "2.48"
 hilt-navigation-compose = "1.1.0-beta01"
 
+mockk = "1.13.2"
+kotlinx-coroutines-test = "1.7.3"
+turbine = "0.12.0"
+
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -47,6 +51,14 @@ hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-com
 
 #_hiltCompiler = "com.google.dagger:hilt-compiler:${_hiltVersion}"
 #_hiltAndroidTest = "com.google.dagger:hilt-android-testing:${_hiltVersion}"
+
+mockk = { group = "io.mockk", name = "mockk", version.ref = "mockk" }
+
+kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "kotlinx-coroutines-test" }
+
+turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbine" }
+
+
 
 [plugins]
 com-android-application = { id = "com.android.application", version.ref = "agp" }
