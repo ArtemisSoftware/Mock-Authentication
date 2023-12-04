@@ -9,9 +9,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
-class LoginBase64UseCase @Inject constructor(
-    private val authRepository: AuthRepository,
-) {
+class LoginBase64UseCase @Inject constructor(private val authRepository: AuthRepository) {
 
     operator fun invoke(
         username: String?,
