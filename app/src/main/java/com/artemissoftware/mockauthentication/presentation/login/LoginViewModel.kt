@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.artemissoftware.mockauthentication.domain.DataState
 import com.artemissoftware.mockauthentication.domain.usecases.LoginBase64UseCase
 import com.artemissoftware.mockauthentication.presentation.ButtonState
+import com.artemissoftware.mockauthentication.presentation.NavigationEvent
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableStateFlow

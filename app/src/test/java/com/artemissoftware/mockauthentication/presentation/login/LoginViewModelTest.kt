@@ -5,6 +5,7 @@ import com.artemissoftware.mockauthentication.MainCoroutineRule
 import com.artemissoftware.mockauthentication.domain.DataState
 import com.artemissoftware.mockauthentication.domain.usecases.LoginBase64UseCase
 import com.artemissoftware.mockauthentication.presentation.ButtonState
+import com.artemissoftware.mockauthentication.presentation.NavigationEvent
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery
 import io.mockk.coVerify
