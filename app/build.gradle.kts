@@ -70,10 +70,12 @@ dependencies {
     implementation(libs.hilt.android)
     ksp(libs.hilt.android.compiler)
     implementation(libs.hilt.navigation.compose)
+    implementation(libs.okhttp3)
 
     testImplementation(libs.mockk)
     testImplementation(libs.kotlinx.coroutines.test)
     testImplementation(libs.turbine)
+    testImplementation(libs.okhttp3.mock.webserver)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
