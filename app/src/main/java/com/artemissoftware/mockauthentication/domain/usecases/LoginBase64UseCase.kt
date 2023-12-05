@@ -11,10 +11,7 @@ import javax.inject.Inject
 
 class LoginBase64UseCase @Inject constructor(private val authRepository: AuthRepository) {
 
-    operator fun invoke(
-        username: String?,
-        password: String?,
-    ): Flow<DataState<out Any>> = flow {
+    operator fun invoke(username: String?, password: String?): Flow<DataState<out Any>> = flow {
         emit(DataState.Loading(progressBarState = ProgressBarState.Loading))
 
         val credentials = getCredentials(username, password)
