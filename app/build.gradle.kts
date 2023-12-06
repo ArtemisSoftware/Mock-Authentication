@@ -72,6 +72,8 @@ dependencies {
     implementation(libs.hilt.navigation.compose)
     implementation(libs.okhttp3)
 
+    implementation(libs.compose.navigation)
+
     testImplementation(libs.mockk)
     testImplementation(libs.kotlinx.coroutines.test)
     testImplementation(libs.turbine)
