@@ -16,16 +16,17 @@ import androidx.navigation.compose.navigation
 import com.artemissoftware.mockauthentication.presentation.authentication.AuthenticationScreen
 
 fun NavGraphBuilder.navGraph(
-    route: String,
     navController: NavController,
 ) {
+    /*
     navigation(
         startDestination = Route.AuthLogin.link,
-        route = route,
+        route = "root",
     ) {
+        */
         login(navController)
         profile(navController)
-    }
+    //}
 }
 
 fun NavGraphBuilder.login(navController: NavController) {
