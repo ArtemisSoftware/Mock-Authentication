@@ -78,13 +78,15 @@ dependencies {
     testImplementation(libs.kotlinx.coroutines.test)
     testImplementation(libs.turbine)
     testImplementation(libs.okhttp3.mock.webserver)
-    testImplementation(libs.hilt.android.testing)
+    androidTestImplementation(libs.hilt.android.testing)
     testImplementation(libs.junit)
+
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
     androidTestImplementation(platform(libs.compose.bom))
     androidTestImplementation(libs.ui.test.junit4)
     debugImplementation(libs.ui.tooling)
     debugImplementation(libs.ui.test.manifest)
-    androidTestImplementation(platform(libs.compose.bom))
+
+    kspAndroidTest(libs.hilt.android.compiler)
 }
