@@ -15,8 +15,8 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object NetworkModule {
-    // protected open fun baseUrl() = "https://testapi.test"
+open class NetworkModule {
+    protected open fun baseUrl() = "https://testapi.test"
 
     @Singleton
     @Provides
@@ -37,7 +37,7 @@ object NetworkModule {
 
         return Retrofit.Builder()
             .addConverterFactory(MoshiConverterFactory.create(moshi))
-            .baseUrl("https://testapi.test")
+            .baseUrl(baseUrl())
             .client(okHttpClient)
             .build()
     }
