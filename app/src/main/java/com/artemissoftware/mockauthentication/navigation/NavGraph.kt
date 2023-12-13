@@ -11,12 +11,13 @@ import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
 import com.artemissoftware.mockauthentication.presentation.authentication.AuthenticationScreen
 
 fun NavGraphBuilder.navGraph(
-    navController: NavController,
+    navController: NavHostController,
 ) {
     /*
     navigation(
@@ -29,13 +30,13 @@ fun NavGraphBuilder.navGraph(
     //}
 }
 
-fun NavGraphBuilder.login(navController: NavController) {
+fun NavGraphBuilder.login(navController: NavHostController) {
     composable(route = Route.AuthLogin.link) {
         AuthenticationScreen(navController)
     }
 }
 
-fun NavGraphBuilder.profile(navController: NavController) {
+fun NavGraphBuilder.profile(navController: NavHostController) {
     composable(
         route = Route.AuthProfile.link,
     ) {
@@ -44,7 +45,7 @@ fun NavGraphBuilder.profile(navController: NavController) {
 }
 
 @Composable
-fun AuthProfileScreen(navController: NavController) {
+fun AuthProfileScreen(navController: NavHostController) {
     Box(Modifier.fillMaxSize()) {
         Column(modifier = Modifier.align(Alignment.Center), horizontalAlignment = Alignment.CenterHorizontally) {
             Text(
