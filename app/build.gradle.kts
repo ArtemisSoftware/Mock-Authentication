@@ -78,6 +78,7 @@ dependencies {
     testImplementation(libs.kotlinx.coroutines.test)
     testImplementation(libs.turbine)
     testImplementation(libs.okhttp3.mock.webserver)
+    androidTestImplementation(libs.okhttp3.mock.webserver)
     androidTestImplementation(libs.hilt.android.testing)
     testImplementation(libs.junit)
 
