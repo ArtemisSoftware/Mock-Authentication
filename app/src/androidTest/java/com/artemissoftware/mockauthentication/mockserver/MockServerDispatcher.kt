@@ -10,10 +10,10 @@ class MockServerDispatcher {
         return object : Dispatcher() {
             override fun dispatch(request: RecordedRequest): MockResponse {
                 return when (request.path) {
-                    "/auth/login" -> {
-                        var json: String = ""
-                        if (map.containsKey("/auth/login")) {
-                            json = map.get("/auth/login")!!
+                    AUTH_LOGIN -> {
+                        var json = ""
+                        if (map.containsKey(AUTH_LOGIN)) {
+                            json = map[AUTH_LOGIN]!!
                         }
                         MockResponse().setResponseCode(200).setBody(getJsonContent(json))
                     }
@@ -22,7 +22,16 @@ class MockServerDispatcher {
             }
         }
     }
+
     private fun getJsonContent(fileName: String): String {
         return InputStreamReader(this.javaClass.classLoader!!.getResourceAsStream(fileName)).use { it.readText() }
+    }
+
+    companion object Path {
+        const val AUTH_LOGIN = "/auth/login"
+
+        val serviceMap: Map<String, String> = mapOf(
+            Pair(AUTH_LOGIN, "auth_login_success.json"),
+        )
     }
 }
