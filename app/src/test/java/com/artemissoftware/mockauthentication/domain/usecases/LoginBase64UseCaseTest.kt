@@ -3,6 +3,7 @@ package com.artemissoftware.mockauthentication.domain.usecases
 import android.util.Base64
 import app.cash.turbine.test
 import app.cash.turbine.testIn
+import app.cash.turbine.turbineScope
 import com.artemissoftware.mockauthentication.domain.DataState
 import com.artemissoftware.mockauthentication.domain.models.Login
 import com.artemissoftware.mockauthentication.domain.models.Resource
@@ -54,29 +55,33 @@ class LoginBase64UseCaseTest {
 
     @Test
     fun `execute login check if credentials was null`() = runTest {
-        val email = null
-        val password = null
-        val loginSuccessResult = Login("apikey")
-        coEvery { authRepository.login(null) } returns Resource.Success(loginSuccessResult)
+        turbineScope {
+            val email = null
+            val password = null
+            val loginSuccessResult = Login("apikey")
+            coEvery { authRepository.login(null) } returns Resource.Success(loginSuccessResult)
 
-        useCase(email, password).testIn(backgroundScope)
+            useCase(email, password).testIn(backgroundScope)
 
-        coVerify { authRepository.login(isNull()) }
+            coVerify { authRepository.login(isNull()) }
+        }
     }
 
     @Test
     fun `execute login check if we have passed credentials`() = runTest {
-        val email = "email"
-        val password = "pass"
-        val credentials = "credentials"
-        val loginSuccessResult = Login("apikey")
-        coEvery { authRepository.login(any()) } returns Resource.Success(loginSuccessResult)
+        turbineScope {
+            val email = "email"
+            val password = "pass"
+            val credentials = "credentials"
+            val loginSuccessResult = Login("apikey")
+            coEvery { authRepository.login(any()) } returns Resource.Success(loginSuccessResult)
 
-        every { useCase.getCredentials(email, password) } returns credentials
+            every { useCase.getCredentials(email, password) } returns credentials
 
-        useCase(email, password).testIn(backgroundScope)
+            useCase(email, password).testIn(backgroundScope)
 
-        coVerify { authRepository.login(isNull(inverse = true)) }
+            coVerify { authRepository.login(isNull(inverse = true)) }
+        }
     }
 
     @Test

@@ -18,7 +18,7 @@ hilt-navigation-compose = "1.1.0-beta01"
 
 mockk = "1.13.2"
 kotlinx-coroutines-test = "1.7.3"
-turbine = "0.12.0"
+turbine = "1.0.0"
 okhttp3 = "4.10.0"
 compose-navigation = "2.6.0-alpha04"
 okhttp3-idling-resource = "1.0.0"
