@@ -74,12 +74,17 @@ dependencies {
 
     implementation(libs.compose.navigation)
 
+    implementation(libs.room.runtime)
+    implementation(libs.room.ktx)
+    annotationProcessor(libs.room.compiler)
+    ksp(libs.room.compiler)
+
+    // Testing
+
     testImplementation(libs.mockk)
     testImplementation(libs.kotlinx.coroutines.test)
     testImplementation(libs.turbine)
     testImplementation(libs.okhttp3.mock.webserver)
-    androidTestImplementation(libs.okhttp3.mock.webserver)
-    androidTestImplementation(libs.hilt.android.testing)
     testImplementation(libs.junit)
 
     androidTestImplementation(libs.androidx.test.ext.junit)
@@ -87,6 +92,9 @@ dependencies {
     androidTestImplementation(platform(libs.compose.bom))
     androidTestImplementation(libs.ui.test.junit4)
     androidTestImplementation(libs.okhttp3.idling.resource)
+    androidTestImplementation(libs.okhttp3.mock.webserver)
+    androidTestImplementation(libs.hilt.android.testing)
+
     debugImplementation(libs.ui.tooling)
     debugImplementation(libs.ui.test.manifest)
 
