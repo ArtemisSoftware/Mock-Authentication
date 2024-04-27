@@ -94,6 +94,7 @@ dependencies {
     androidTestImplementation(libs.okhttp3.idling.resource)
     androidTestImplementation(libs.okhttp3.mock.webserver)
     androidTestImplementation(libs.hilt.android.testing)
+    androidTestImplementation(libs.core.testing)
 
     debugImplementation(libs.ui.tooling)
     debugImplementation(libs.ui.test.manifest)

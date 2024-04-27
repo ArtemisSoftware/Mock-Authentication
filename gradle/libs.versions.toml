@@ -22,6 +22,7 @@ turbine = "1.0.0"
 okhttp3 = "4.10.0"
 compose-navigation = "2.6.0-alpha04"
 okhttp3-idling-resource = "1.0.0"
+core-testing = "2.1.0"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
@@ -71,6 +72,10 @@ okhttp3-idling-resource = { group = "com.jakewharton.espresso", name = "okhttp3-
 
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
+
+
+core-testing = { group = "androidx.arch.core", name = "core-testing", version.ref = "core-testing" }
+
 
 [plugins]
 com-android-application = { id = "com.android.application", version.ref = "agp" }
